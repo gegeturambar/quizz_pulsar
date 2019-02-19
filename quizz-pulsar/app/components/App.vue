@@ -1,13 +1,14 @@
 <template>
-    <LegalInformations/>
+    <Question/>
     <!-- choose the Page component on which you work here. Transitions between components will be made later. -->
 </template>
 
 <script >
   import ChoiceSettings from "./Page/ChoiceSettings";
   import LegalInformations from "./Page/LegalInformations";
+  import Question from "./Page/Question";
   export default {
-	  components: {LegalInformations, ChoiceSettings}
+	  components: {Question, LegalInformations, ChoiceSettings}
   }
 </script>
 
