@@ -1,19 +1,13 @@
 <template>
-    <Page>
-        <ActionBar title="Welcome to NativeScript-Vue!"/>
-        <GridLayout columns="*" rows="*">
-            <Label class="message" :text="msg" col="0" row="0"/>
-        </GridLayout>
-    </Page>
+    <LegalInformations/>
+    <!-- choose the Page component on which you work here. Transitions between components will be made later. -->
 </template>
 
 <script >
+  import ChoiceSettings from "./Page/ChoiceSettings";
+  import LegalInformations from "./Page/LegalInformations";
   export default {
-    data() {
-      return {
-        msg: 'Hellotre World!'
-      }
-    }
+	  components: {LegalInformations, ChoiceSettings}
   }
 </script>
 
