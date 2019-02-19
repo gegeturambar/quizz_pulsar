@@ -1,5 +1,5 @@
 <template>
-    <Question/>
+    <LegalInformations/>
     <!-- choose the Page component on which you work here. Transitions between components will be made later. -->
 </template>
 
