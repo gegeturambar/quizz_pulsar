@@ -1,9 +1,14 @@
 <template>
     <Page>
-        <ActionBar title="Set the choices right here!!!"/>
-        <GridLayout columns="*" rows="*">
+        <!--<ActionBar title="Set the choices right here!!!"/>-->
+        <StackLayout>
             <Label class="message" :text="msg" col="0" row="0"/>
-        </GridLayout>
+            <ListPicker :items="categoryList" selectedIndex="0"
+                        v-model="selectedCategory" />
+            <ListPicker :items="difficultyList" selectedIndex="0"
+                        v-model="selectedDifficulty" />
+            <Button text="click" @tap="displaySelectionedValues" />
+        </StackLayout>
     </Page>
 </template>
 
@@ -12,9 +17,18 @@
 		name: "ChoiceSettings",
 		data() {
 			return {
-				msg: 'Work to be done by someone. This is where user will choose his settings!'
+				msg: 'configuration du quizz',
+				categoryList: ["toto", "tata", "titi"],//todo get category from https://opentdb.com/api_category.php
+                difficultyList: ["easy", "medium", "hard"]
 			}
-		}
+		},
+        methods: {
+			displaySelectionedValues() {
+				// console.log(this.categoryList)
+				console.log(this.categoryList[this.selectedCategory]);
+				console.log(this.difficultyList[this.selectedDifficulty]);
+			}
+		},
 	}
 </script>
 
