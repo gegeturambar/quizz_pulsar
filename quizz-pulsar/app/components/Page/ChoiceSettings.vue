@@ -2,9 +2,12 @@
     <Page>
         <!--<ActionBar title="Set the choices right here!!!"/>-->
         <StackLayout>
-            <Label class="message" :text="msg" col="0" row="0"/>
-            <ListPicker :items="categoryList" selectedIndex="0"
-                        v-model="selectedCategory" />
+            <Label class="message" :text="msg"/>
+            <StackLayout orientation="horizontal">
+                <Label class="message" :text="labelCategory" verticalAlignment="center"/>
+                <ListPicker :items="categoryList" selectedIndex="0"
+                            v-model="selectedCategory" />
+            </StackLayout>
             <ListPicker :items="difficultyList" selectedIndex="0"
                         v-model="selectedDifficulty" />
             <Button text="click" @tap="displaySelectionedValues" />
@@ -18,6 +21,7 @@
 		data() {
 			return {
 				msg: 'configuration du quizz',
+				labelCategory: 'catégorie',
 				categoryList: ["toto", "tata", "titi"],//todo get category from https://opentdb.com/api_category.php
                 difficultyList: ["easy", "medium", "hard"]
 			}
